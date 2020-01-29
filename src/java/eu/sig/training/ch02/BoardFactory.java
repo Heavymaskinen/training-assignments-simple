@@ -34,13 +34,13 @@ public class BoardFactory {
         }
 
         private void linkSquareWithNeighbours(int x, int y) {
-            Square square = getSquare(x, y);
             for (Direction dir : Direction.values()) {
-                linkNeigbhour(x, y, square, dir);
+                linkNeigbhour(x, y, dir);
             }
         }
 
-        private void linkNeigbhour(int x, int y, Square sourceSquare, Direction dir) {
+        private void linkNeigbhour(int x, int y, Direction dir) {
+            Square sourceSquare = getSquare(x, y);
             int dirX = createXDirection(x, dir);
             int dirY = createYDirection(y, dir);
 
@@ -60,7 +60,6 @@ public class BoardFactory {
             return (width + x + dir.getDeltaX()) % width;
         }
     }
-    // end::createBoard[]
 }
 
 class Board {
