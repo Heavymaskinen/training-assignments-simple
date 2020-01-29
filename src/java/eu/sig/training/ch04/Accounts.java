@@ -6,7 +6,6 @@ public class Accounts {
         return new CheckingAccount();
     }
 
-    // tag::isValid[]
     public static boolean isValid(String number) {
         int sum = 0;
         for (int i = 0; i < number.length(); i++) {
@@ -14,5 +13,4 @@ public class Accounts {
         }
         return sum % 11 == 0;
     }
-    // end::isValid[]
 }
