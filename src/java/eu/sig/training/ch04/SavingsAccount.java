@@ -1,8 +1,11 @@
 package eu.sig.training.ch04;
 
 public class SavingsAccount extends AbstractAccount {
-    private static final float INTEREST_PERCENTAGE = 0.04f;
     private CheckingAccount registeredCounterAccount;
+
+    protected SavingsAccount() {
+        super(0.04f);
+    }
 
     public Transfer makeTransfer(String counterAccount, Money amount)
             throws BusinessException {
@@ -20,12 +23,4 @@ public class SavingsAccount extends AbstractAccount {
         return transfer;
     }
 
-    public void addInterest() {
-        Money interest = balance.multiply(INTEREST_PERCENTAGE);
-        if (interest.greaterThan(0)) {
-            balance.add(interest);
-        } else {
-            balance.substract(interest);
-        }
-    }
 }

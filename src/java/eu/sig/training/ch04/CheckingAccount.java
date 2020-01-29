@@ -5,6 +5,10 @@ public class CheckingAccount extends AbstractAccount {
     private Money balance = new Money();
     private int transferLimit = 100;
 
+    protected CheckingAccount() {
+        super(0.01f);
+    }
+
     public Transfer makeTransfer(String counterAccount, Money amount)
             throws BusinessException {
         validateWithdrawalLimit(amount);
@@ -27,13 +31,6 @@ public class CheckingAccount extends AbstractAccount {
         }
     }
 
-    public void addInterest() {
-        Money interest = balance.multiply(INTEREST_PERCENTAGE);
-        if (interest.greaterThan(0)) {
-            balance.add(interest);
-        } else {
-            balance.substract(interest);
-        }
-    }
+
 
 }
