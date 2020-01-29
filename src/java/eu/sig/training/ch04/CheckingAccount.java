@@ -1,6 +1,6 @@
 package eu.sig.training.ch04;
 
-public class CheckingAccount {
+public class CheckingAccount extends AbstractAccount {
     private static final float INTEREST_PERCENTAGE = 0.01f;
     private Money balance = new Money();
     private int transferLimit = 100;

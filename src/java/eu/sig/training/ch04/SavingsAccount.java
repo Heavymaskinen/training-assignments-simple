@@ -1,18 +1,13 @@
 package eu.sig.training.ch04;
 
-public class SavingsAccount {
+public class SavingsAccount extends AbstractAccount {
     private static final float INTEREST_PERCENTAGE = 0.04f;
-    private Money balance = new Money();
     private CheckingAccount registeredCounterAccount;
 
     public Transfer makeTransfer(String counterAccount, Money amount)
             throws BusinessException {
         validateAccount(counterAccount);
         return createTransfer(counterAccount, amount);
-    }
-
-    private void validateAccount(String counterAccount) throws BusinessException {
-        new AccountValidator(counterAccount).validate();
     }
 
     private Transfer createTransfer(String counterAccount, Money amount) throws BusinessException {
