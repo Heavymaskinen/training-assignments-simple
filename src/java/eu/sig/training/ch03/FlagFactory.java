@@ -21,7 +21,6 @@ public class FlagFactory {
             Nationality.RUSSIA, new RussianFlag()
     );
 
-    // tag::getFlag[]
     public List<Color> getFlagColors(Nationality nationality) {
         if (flags.containsKey(nationality)) {
             return flags.get(nationality).getColors();
