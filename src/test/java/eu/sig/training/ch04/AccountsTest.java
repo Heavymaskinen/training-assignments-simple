@@ -1,4 +1,3 @@
-// tag::AccountsTest[]
 package eu.sig.training.ch04;
 
 import static org.junit.Assert.assertFalse;
