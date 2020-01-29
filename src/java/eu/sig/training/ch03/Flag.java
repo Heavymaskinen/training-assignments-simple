@@ -4,7 +4,7 @@ import java.awt.Color;
 import java.util.Arrays;
 import java.util.List;
 
-public class Flag {
+public abstract class Flag {
     private final List<Color> colors;
 
     public Flag(Color... colors) {
